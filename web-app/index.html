@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <section>
+        <h1>JS calls a WASM function to process our input</h1>
+        <label for="input">Generate</label>
+        <input type="text" id="inputName" />
+        <button id="btnGreet">Process</button>
+        <label id="resultGreet"></label>
+      </section>
+
+      <section id="from-web-worker">
+        <h1>Running the WASM code in a Web Worker</h1>
+        <label for="input">Generate</label>
+        <input type="text" id="inputWebWorker" />
+        <button id="btnProcessInWebWorker">Process</button>
+        <label id="resultWebWorker"></label>
+      </section>
+    </div>
+   
+    <script src="./rust_wasm_js_interop.js"></script>
+    <script type="module" src="./main.js"></script>
+    <script type="module">
+      // run script in web worker
+      const worker = new Worker("./webworker.js");
+      const btnProcessInWebWorker = document.getElementById("btnProcessInWebWorker");
+      const inputWebWorker = document.getElementById("inputWebWorker");
+      const resultWebWorker = document.getElementById("resultWebWorker");
+
+      btnProcessInWebWorker.addEventListener("click", () => {
+        worker.postMessage(inputWebWorker.value);
+      });
+
+      worker.addEventListener("message", (e) => {
+        resultWebWorker.innerText = e.data;
+      });
+
+      
+    </script>
+  </body>
+</html>
