@@ -1,0 +1,14 @@
+{
+  "name": "web-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "http-server ."
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "rust-wasm-js-interop": "file:../pkg"
+  }
+}
