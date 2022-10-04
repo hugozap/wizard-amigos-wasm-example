@@ -2559,6 +2559,33 @@ declare namespace wasm_bindgen {
 	*/
 	  get_alpha(): number;
 	}
+	/**
+	*/
+	export class Spell {
+	  free(): void;
+	/**
+	* @param {string} name
+	* @param {number} damage
+	*/
+	  constructor(name: string, damage: number);
+	}
+	/**
+	*/
+	export class Wizard {
+	  free(): void;
+	/**
+	* @param {string} name
+	*/
+	  constructor(name: string);
+	/**
+	* @returns {number}
+	*/
+	  cast_spell(): number;
+	/**
+	* @returns {any}
+	*/
+	  get_spells(): any;
+	}
 	
 }
 
@@ -2570,6 +2597,12 @@ declare interface InitOutput {
   readonly factorial: (a: number) => number;
   readonly add_effect: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly main: () => void;
+  readonly __wbg_wizard_free: (a: number) => void;
+  readonly __wbg_spell_free: (a: number) => void;
+  readonly spell_new: (a: number, b: number, c: number) => number;
+  readonly wizard_new: (a: number, b: number) => number;
+  readonly wizard_cast_spell: (a: number) => number;
+  readonly wizard_get_spells: (a: number) => number;
   readonly offset: (a: number, b: number, c: number) => void;
   readonly offset_red: (a: number, b: number) => void;
   readonly offset_green: (a: number, b: number) => void;
