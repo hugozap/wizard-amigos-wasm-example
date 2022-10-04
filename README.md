@@ -2,7 +2,7 @@
 
 This project consists of 2 projects
 - Rust library `src/lib.rs`
-- Static html site (no bundlers) `webapp`
+- Static html site (no bundlers) `web-app`
 
 ## Examples
 
@@ -12,7 +12,7 @@ This project consists of 2 projects
 
 ## Running the app
 
-- Start an http server from the `webapp` with `npm run start`
+- Start an http server from the `web-app` with `npm run start`
 
 
 ## Generating the wasm package and updating the webapp
