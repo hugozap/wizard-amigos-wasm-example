@@ -6,8 +6,7 @@ use photon_rs::to_raw_pixels;
 use photon_rs::effects::color_vertical_strips;
 use photon_rs::conv::gaussian_blur;
 use photon_rs::Rgb;
-//use console_error_panic_hook
-
+mod wizard;
 
 #[wasm_bindgen]
 pub fn greet(name: &str) -> String {
@@ -34,9 +33,8 @@ pub fn add_effect(mut image:&[u8], width:u32, height: u32) -> Vec<u8> {
     //create Vec<u8> from &[u8]
     let imgBuffer: Vec<u8> = Vec::from(image);
     let mut img = PhotonImage::new(imgBuffer, width, height);
-    let color = Rgb::new(255u8, 0u8, 0u8);
     //color_vertical_strips(&mut img, 8u8, color);
-    gaussian_blur(&mut img, 3);
+    gaussian_blur(&mut img, 5);
     //return the image buffer
     img.get_raw_pixels()
 }

@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>WASM demos</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      section {
+        margin: 1rem 0;
+      }
+ 
+    </style>
   </head>
   <body>
     <div id="app">
@@ -29,8 +38,18 @@
         <label for="inputImage">Load image from disk</label>
         <input type="file" id="inputImage" />
         <button id="btnLoadImage">Load</button>
-        <img id="resultImage" />
+        <!--show loaded image-->
+        <img id="originalImage" style="width:200px" />
+        <img id="resultImage" style="width:200px" />
       </section>
+
+      <!-- section with a button to cast spells -->
+      <section id="cast-spells">
+        <h1>Cast spells</h1>
+        <button id="btnCastSpell">Cast spell</button>
+        <label id="resultSpells"></label>
+      </section>
+      
 
     </div>
    
