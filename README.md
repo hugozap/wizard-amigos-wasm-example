@@ -1,17 +1,21 @@
 # WASM and JS interop
 
 This project consists of 2 projects
-- Rust library
-- Static html site (no bundlers)
+- Rust library `src/lib.rs`
+- Static html site (no bundlers) `webapp`
 
-# Concepts
+## Examples
 
-- Call a Rust function and use result from Js
-- Manipulate an image (loaded from input file and sent to wasm)
+- Calculate a number factorial in rust
+- Same operation but in a Web Worker
+- Load an image and apply a blur filter (using Rust photon library)
+
+## Running the app
+
+- Start an http server from the `webapp` with `npm run start`
 
 
-
-## Generating the wasm package.
+## Generating the wasm package and updating the webapp
 
 If you update the rust code, you need to re-generate the package and copy the files to the web-app folder:
 

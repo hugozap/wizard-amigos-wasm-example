@@ -40,12 +40,7 @@ function addEffectToImage(image) {
 
   //get image data
   const imageData = ctx.getImageData(0, 0, image.width, image.height);
-
-  console.log("will apply effect");
-  //load image bytes
-
   const result = add_effect(imageData.data, image.width, image.height);
-  console.log("result", result);
   //create new image data from result
   const newImageData = new ImageData(
     Uint8ClampedArray.from(result),
