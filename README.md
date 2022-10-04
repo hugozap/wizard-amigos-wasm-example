@@ -1,5 +1,7 @@
 # WASM and JS interop
 
+Open app: https://wizard-amigos-wasm-example.netlify.app/
+
 This project consists of 2 projects
 - Rust library `src/lib.rs`
 - Static html site (no bundlers) `web-app`
