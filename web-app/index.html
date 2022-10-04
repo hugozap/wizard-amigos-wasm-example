@@ -10,9 +10,9 @@
       <section>
         <h1>JS calls a WASM function to process our input</h1>
         <label for="input">Generate</label>
-        <input type="text" id="inputName" />
-        <button id="btnGreet">Process</button>
-        <label id="resultGreet"></label>
+        <input type="text" id="inputNumber" />
+        <button id="btnProcess">Process</button>
+        <label id="result"></label>
       </section>
 
       <section id="from-web-worker">
@@ -22,6 +22,16 @@
         <button id="btnProcessInWebWorker">Process</button>
         <label id="resultWebWorker"></label>
       </section>
+
+      <!-- load an image from user disk-->
+      <section id="load-image">
+        <h1>Load an image from user disk</h1>
+        <label for="inputImage">Load image from disk</label>
+        <input type="file" id="inputImage" />
+        <button id="btnLoadImage">Load</button>
+        <img id="resultImage" />
+      </section>
+
     </div>
    
     <script src="./rust_wasm_js_interop.js"></script>
@@ -34,7 +44,7 @@
       const resultWebWorker = document.getElementById("resultWebWorker");
 
       btnProcessInWebWorker.addEventListener("click", () => {
-        worker.postMessage(inputWebWorker.value);
+        worker.postMessage(Number(inputWebWorker.value));
       });
 
       worker.addEventListener("message", (e) => {
